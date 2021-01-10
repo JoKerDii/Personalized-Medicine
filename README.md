@@ -74,7 +74,7 @@ Eight supervised machine learning methods were applied:
 * Adaptive Boosting (AdaBoost)
 * eXtreme Gradient Boosting (XGBoost)
 * Multi-Laryer Perceptron (MLP)
-* An ensemble model of LR, RF, KNN, and SVM
+* An ensemble (voting) model of LR, RF, KNN, and SVM
 
 Here is an evaluation of model performance.
 
@@ -108,6 +108,92 @@ Please see this thesis for more discussions.
 2. Non-static word embedding models
 3. Concatenating multiple word vector representations (with BioConceptVec)
 4. Deal with imbalanced text data
+
+## Environment
+
+python 3.8
+
+pytorch
+
+## Directory
+
+```
+​```
+Personalized-Medicine
+├── eight-ml-classifiers
+│   ├── images
+│   │   ├── confusion-matrix
+│   │   ├── learning-curve
+│   │   ├── Accuracy_allmodel.png
+│   │   ├── F1score_allmodels.png
+│	│   └── logloss_allmodels.png
+│   ├── README.md
+│	├── data-preprocessing_v1.py
+│	├── data-preprocessing_v2.py
+│	├── feature-extraction.py
+│	├── model-evaluation.py
+│	├── performance-of-ml-classifiers.ipynb
+│	├── train-models.py
+│	├── workflow-part1.ipynb
+│	└── workflow-part2.ipynb
+├── exploratory-data analysis
+│   ├── images
+│   │   ├── other_distribution
+│   │   │   ├── dist_char.png
+│   │   │   ├── dist_class.png
+│   │   │   ├── dist_gene.png
+│   │   │   ├── dist_variation.png
+│   │   │   ├── dist_word.png
+│   │   │   ├── gene_class.png
+│   │   │   └── word_class.png
+│   │   ├── uni_bi_trigram_distribution
+│   │   │   ├── bi_c1.png
+│   │   │   ├── ...
+│   │   │   ├── bi_c9.png
+│   │   │   ├── tri_c1.png
+│   │   │   ├── ...
+│   │   │   ├── tri_c9.png
+│   │   │   ├── uni_c1.png
+│   │   │   ├── ...
+│   │   │   └── uni_c9.png
+│   │   └── wordcloud_image
+│   │   │   ├── wordCloud_class_1.png
+│   │   │   ├── ...
+│   │   │   ├── wordCloud_class_9.png
+│   │   │   ├── wordCloud_not_strict.png
+│   │   │   └── wordCloud_strict.png
+│   ├── eda-demo.ipynb
+│   ├── eda-gene-variation.py
+│   ├── eda-text.py
+│   └── resampling.ipynb
+├── neural-nets
+│   ├── image
+│   │   ├── CE
+│   │   ├── acc
+│   │   ├── cm
+│   │   ├── f1score
+│   │   └── logloss
+│   ├── models
+│   │   ├── __pycache__
+│   │   └── CNN.py
+│   ├── LICENSE
+│   ├── run.py
+│   ├── train_eval.py
+│   ├── utils.py
+│   └── visualize.py
+├── word-embedding-and-bow
+│   ├── README.md
+│   ├── bioconceptvec-rf.py
+│   ├── biosentvec-rf.py
+│   ├── biowordvec-rf.py
+│   ├── glove-rf.py
+│   ├── tfidf-count-rf.py
+│   └── word2vec-rf.py
+├── LICENSE.txt
+└── README.md
+
+​```
+```
 
 
 

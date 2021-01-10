@@ -24,7 +24,7 @@ parser.add_argument(
     "--model",
     type=str,
     required=True,
-    help="choose a model: TextCNN, TextRNN, FastText, TextRCNN, TextRNN_Att, DPCNN, Transformer",
+    help="choose a model: CNN, BiLSTM",  # RCNN, RNN_Attention, BERT is coming soon
 )
 parser.add_argument(
     "--cuda", type=int, default=0, help="choose a cuda from: [0,1,2,3,4,5,6,7]"

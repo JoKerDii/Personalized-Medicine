@@ -37,11 +37,11 @@ class Config(object):
         self.n_epochs_stop = 200  # for early stopping
         self.n_classes = len(self.le_classes)
         self.n_vocab = self.embedding_pretrained.shape[0]  # number of vocabulary
-        self.num_epochs = 1
+        self.num_epochs = 1000
         self.batch_size = 128
         self.learning_rate = 1e-4
         self.embed_size = self.embedding_pretrained.shape[1]
-        self.filter_sizes = [1, 4, 4, 4]  # [1, 4, 4, 4]
+        self.filter_sizes = [1, 4, 4, 4]
         self.num_filters = 128
 
 

@@ -35,14 +35,29 @@ def training(config, model, train_loader, valid_loader):
     optimizer = torch.optim.Adam(
         filter(lambda p: p.requires_grad, model.parameters()), lr=config.learning_rate
     )  # 0.001 0.00001
-    scheduler = torch.optim.lr_scheduler.OneCycleLR(
+
+    ## CNN
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer,
-        div_factor=250,
-        max_lr=0.1,
-        steps_per_epoch=len(train_loader),
-        epochs=10,
-        anneal_strategy="linear",
+        mode="min",
+        factor=0.1,
+        patience=10,
+        threshold=0.00001,
+        threshold_mode="rel",
+        cooldown=0,
+        min_lr=0,
+        eps=1e-08,
+        verbose=False,
     )
+    ## BiLSTM
+    # scheduler = torch.optim.lr_scheduler.OneCycleLR(
+    #     optimizer,
+    #     div_factor=250,
+    #     max_lr=0.1,
+    #     steps_per_epoch=len(train_loader),
+    #     epochs=10,
+    #     anneal_strategy="linear",
+    # )
 
     # Returns lists of metrics
     train_loss = []  # saving training CE loss
