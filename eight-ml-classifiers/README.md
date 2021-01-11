@@ -4,7 +4,7 @@
 
 **Eight Model Performance:**
 
-For more information like model parameters please see `workflow-part1.ipynb` and `workflow-part2.ipynb`.
+For more information please see `workflow-part1.ipynb` and `workflow-part2.ipynb`.
 
 
 

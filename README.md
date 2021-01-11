@@ -4,7 +4,7 @@ This is basically a multi-class text classification task. My first journey of Na
 
 ## Project
 
-[Personalized Medicine](https://en.wikipedia.org/wiki/Personalized_medicine#:~:text=Personalized%20medicine%2C%20also%20referred%20to,response%20or%20risk%20of%20disease.) (PM) is promising to improve health care in both efficiency and safety. It enables each patient to receive earlier diagnoses, risk assessments, and optimal treatments, by using individual genetic profiles. However, PM in cancer treatment is still slowly developing due to a large amount of textual content based-medical literature and clinical observations to be manually analyzed. To address this issue and speed up the progress of PM, we need an efficient text classifier to automatically classify the effect of genetic variants. 
+[Personalized Medicine](https://en.wikipedia.org/wiki/Personalized_medicine#:~:text=Personalized%20medicine%2C%20also%20referred%20to,response%20or%20risk%20of%20disease.) (PM) [1] is promising to improve health care in both efficiency and safety. It enables each patient to receive earlier diagnoses, risk assessments, and optimal treatments, by using individual genetic profiles. However, PM in cancer treatment is still slowly developing due to a large amount of textual content based-medical literature and clinical observations to be manually analyzed. To address this issue and speed up the progress of PM, we need an efficient text classifier to automatically classify the effect of genetic variants. 
 
 The idea and data are from Kaggle competition on topic of '[Personalized Medicine: Redefining Cancer Treatment](https://www.kaggle.com/c/msk-redefining-cancer-treatment/overview)'. In my view, although the competition was flawed due to data leak unfortunately, it is a very novel and special topic, a fascinating problem. Contributions from NLP community and specialists will definitely bring PM into a bright future.
 
@@ -46,7 +46,7 @@ Two data files were used in this project. There are 3321 data points in total. `
 * Univariant and bivariant analyses to show the distribution of categorical variables and the interaction between them. 
 * The distribution of words and characters in all text data. The distribution of unigram, bigram, and trigram for each class. And word cloud plots for each class.
 
-Here is the EDA demo and some findings. 
+[Here](https://github.com/JoKerDii/Personalized-Medicine/tree/master/exploratory-data-analysis) is the EDA demo and some interesting findings. 
 
 ### Feature Extraction 
 
@@ -61,7 +61,7 @@ Features for training machine learning models: one-hot gene and variation + SVD 
 
 Features for training neural networks: feature vectors transformed by `pubmed2018_w2v_400D` pre-trained model (Except for BERT).
 
-Here is an evaluation of some text feature extraction methods.
+[Here](https://github.com/JoKerDii/Personalized-Medicine/tree/master/word-embedding-and-bow) is an evaluation of some text feature extraction methods.
 
 ### Machine Learning Methods（Baseline）
 
@@ -76,13 +76,15 @@ Eight supervised machine learning methods were applied:
 * Multi-Laryer Perceptron (MLP)
 * An ensemble (voting) model of LR, RF, KNN, and SVM
 
-Here is an evaluation of model performance.
+[Here](https://github.com/JoKerDii/Personalized-Medicine/tree/master/eight-ml-classifiers) is an evaluation of model performance.
 
-### Neural Networks (TODO)
+### Neural Networks （Updating）
 
-pytorch - CNN, BiLSTM, RCNN, RNN+Attention, transformer ... describe them (refs)
+**CNN** [2] and **BiLSTM** [3] are available now.  
 
-which static word embedding were considered: Biowordvec_200D, pubmed_w2v_400D, Bioconcept_glove_100D  (refs) why-<u>link</u>
+RCNN, RNN+Attention, and BERT are coming (not soon...it depends on my free time...).
+
+Pre-trained word-embedding is chosen from: [pubmed_w2v_400D](https://github.com/RaRe-Technologies/gensim-data/issues/28)
 
 ### Evaluation Metrics
 
@@ -92,28 +94,28 @@ which static word embedding were considered: Biowordvec_200D, pubmed_w2v_400D, B
 
 ## Results and Discussions
 
-* An EDA demo
-* Comparison of over sampling techniques
-
-* Comparison of pre-trained word embedding models
-
-* Evaluation of eight machine learning methods
-* Evaluation of several neural networks
-
-Please see this thesis for more discussions.
+* [An EDA demo](https://github.com/JoKerDii/Personalized-Medicine/blob/master/exploratory-data-analysis/eda-demo.ipynb)
+* [Comparison of over sampling techniques](https://github.com/JoKerDii/Personalized-Medicine/blob/master/exploratory-data-analysis/resampling.ipynb)
+* It seems traditional over sampling cannot solve the imbalanced data problem. Even worse, over sampling could introduce serious overfitting.
+* [Comparison of pre-trained word embedding models](https://github.com/JoKerDii/Personalized-Medicine/tree/master/word-embedding-and-bow)
+  * The representative power of pre-trained word embedding model highly depends on the dataset itself.
+* [Evaluation of eight machine learning methods](https://github.com/JoKerDii/Personalized-Medicine/blob/master/eight-ml-classifiers/performance-of-ml-classifiers.ipynb)
+* [Evaluation of several neural network -based models](https://github.com/JoKerDii/Personalized-Medicine/tree/master/neural-nets) (updating)
 
 ## Future Work
 
-1. Combining NN models
-2. Non-static word embedding models
-3. Concatenating multiple word vector representations (with BioConceptVec)
-4. Deal with imbalanced text data
+1. Upcoming other three NN based models.
+2. Combine / stack NN models.
+3. Build Non-static NN models. It is reported that non-static NN models are always better than static NN models.
+4. Concatenating multiple word vector representations (e.g. pubmed_w2c_400D and BioConceptVec). In addition to word vectors trained from PubMed, biological concepts are important features.
+5. Deal with imbalanced text data by sentence / word augmentation using [nlpaug](https://github.com/makcedward/nlpaug).
+6. Let's think...
 
 ## Environment
 
 python 3.8
 
-pytorch
+pytorch 1.7.1
 
 ## Directory
 
@@ -199,11 +201,7 @@ Personalized-Medicine
 
 ## References
 
-Transformer https://arxiv.org/pdf/1706.03762.pdf
-
-BERT https://arxiv.org/pdf/1810.04805.pdf
-
-TextCNN https://arxiv.org/pdf/1408.5882.pdf
-
-BiLSTM https://www.sciencedirect.com/science/article/abs/pii/S0893608005001206
+[1] [Personalized Medicine: Part 1: Evolution and Development into Theranostics](https://pubmed.ncbi.nlm.nih.gov/21037908/) 
+[2] [Convolutional Neural Networks for Sentence Classification](https://arxiv.org/pdf/1408.5882.pdf)  
+[3] [Recurrent Neural Network for Text Classification with Multi-Task Learning](https://arxiv.org/abs/1605.05101)  
 

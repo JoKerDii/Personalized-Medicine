@@ -4,8 +4,6 @@
 
 **Comparison:**
 
-
-
 |                                                              | with  dummy variables ||| without  dummy variables ||| without  dummy variables and common words |||
 | ------------------------------------------------------------ | --------------------- | ------------------ | --------- | ------------------------ | ------------------ | --------- | ----------------------------------------- | ------------------ | --------- |
 | Methods\ Performance on testing data                         | Log  Loss             | Balanced  Accuracy | F1  Score | Log  Loss                | Balanced  Accuracy | F1  Score | Log  Loss                                 | Balanced  Accuracy | F1  Score |

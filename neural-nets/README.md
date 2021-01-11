@@ -1,4 +1,4 @@
-# Text Classification
+# Neural Net -based Text Classification 
 
 
 
@@ -41,10 +41,5 @@ BERT||
 
 
 ## References
-[1] Convolutional Neural Networks for Sentence Classification  
-[2] Recurrent Neural Network for Text Classification with Multi-Task Learning  
-[3] Attention-Based Bidirectional Long Short-Term Memory Networks for Relation Classification  
-[4] Recurrent Convolutional Neural Networks for Text Classification  
-[5] Bag of Tricks for Efficient Text Classification  
-[6] Deep Pyramid Convolutional Neural Networks for Text Categorization  
-[7] Attention Is All You Need  
+[1] [Convolutional Neural Networks for Sentence Classification](https://arxiv.org/pdf/1408.5882.pdf)  
+[2] [Recurrent Neural Network for Text Classification with Multi-Task Learning](https://arxiv.org/abs/1605.05101)  

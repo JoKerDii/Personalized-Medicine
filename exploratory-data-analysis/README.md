@@ -2,6 +2,8 @@
 
 
 
+Some interesting plots:
+
 <p align="center"><img  src="./images/other_distribution/dist_class.png" width="80%"></p>
 
 <p align="center"><img  src="./images/other_distribution/dist_word.png" width="80%"></p>
