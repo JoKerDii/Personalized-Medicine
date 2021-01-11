@@ -177,7 +177,8 @@ Personalized-Medicine
 │   │   └── logloss
 │   ├── models
 │   │   ├── __pycache__
-│   │   └── CNN.py
+│   │   ├── CNN.py
+│   │   └── BiLSTM.py
 │   ├── LICENSE
 │   ├── run.py
 │   ├── train_eval.py
