@@ -1,6 +1,6 @@
 <h1 align="center">Personalized Medicine</h1>
 
-This is basically a multi-class text classification task. My first journey of Natural Language Processing (NLP)  :P
+This is a multi-class text classification task. My first journey of Natural Language Processing (NLP)  :P
 
 ## Project
 
@@ -104,18 +104,19 @@ Pre-trained word-embedding is chosen from: [pubmed_w2v_400D](https://github.com/
 
 ## Future Work
 
-1. Upcoming other three NN based models.
+1. Upcoming other three or more NN based models.
 2. Combine / stack NN models.
 3. Build Non-static NN models. It is reported that non-static NN models are always better than static NN models.
-4. Concatenating multiple word vector representations (e.g. pubmed_w2c_400D and BioConceptVec). In addition to word vectors trained from PubMed, biological concepts are important features.
+4. Concatenate multiple word vector representations (e.g. pubmed_w2c_400D and BioConceptVec). In addition to word vectors trained from PubMed, biological concepts are important features.
 5. Deal with imbalanced text data by sentence / word augmentation using [nlpaug](https://github.com/makcedward/nlpaug).
-6. Let's think...
+6. Build a hybrid model / multi-model: one part trained on text data, the other trained on sequence data to capture genetic variants ( like what [DeepSEA](https://github.com/SUSE/DeepSea) does? )
+7. Let's think...
 
 ## Environment
 
 python 3.8
 
-pytorch 1.7.1
+pytorch 1.7.0
 
 ## Directory
 
