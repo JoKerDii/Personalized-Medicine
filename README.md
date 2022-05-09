@@ -1,12 +1,8 @@
 <h1 align="center">Personalized Medicine</h1>
 
-This is a multi-class text classification task. My first journey of Natural Language Processing (NLP)  :P
+## Project Overview
 
-## Project
-
-[Personalized Medicine](https://en.wikipedia.org/wiki/Personalized_medicine#:~:text=Personalized%20medicine%2C%20also%20referred%20to,response%20or%20risk%20of%20disease.) (PM) [1] is promising to improve health care in both efficiency and safety. It enables each patient to receive earlier diagnoses, risk assessments, and optimal treatments, by using individual genetic profiles. However, PM in cancer treatment is still slowly developing due to a large amount of textual content based-medical literature and clinical observations to be manually analyzed. To address this issue and speed up the progress of PM, we need an efficient text classifier to automatically classify the effect of genetic variants. 
-
-The idea and data are from Kaggle competition on topic of '[Personalized Medicine: Redefining Cancer Treatment](https://www.kaggle.com/c/msk-redefining-cancer-treatment/overview)'. In my view, although the competition was flawed due to data leak unfortunately, it is a very novel and special topic, a fascinating problem. Contributions from NLP community and specialists will definitely bring PM into a bright future.
+[Personalized Medicine](https://en.wikipedia.org/wiki/Personalized_medicine#:~:text=Personalized%20medicine%2C%20also%20referred%20to,response%20or%20risk%20of%20disease.) (PM) [1] is promising in improving health care efficiently and safely because it makes it possible for patients to receive earlier diagnoses, risk assessments, and optimal treatments. However, PM in cancer treatment is still slowly developing due to a large amount of textual content based-medical literature and clinical observations needed to be manually analyzed. To address this issue and speed up the progress of PM, we propose an efficient text classifier to automatically classify the effect of genetic variants. We show that contributions from NLP community and specialists can definitely bring PM into a bright future.
 
 ## Methods
 
@@ -14,7 +10,7 @@ The idea and data are from Kaggle competition on topic of '[Personalized Medicin
 
 The data comes from [Kaggle](https://www.kaggle.com/c/msk-redefining-cancer-treatment/overview) competition and Memorial Sloan Kettering Cancer Center.
 
-Two data files were used in this project. There are 3321 data points in total. `Gene` and`Variation` are categorical.  `Class` contains 9 unique values.`TEXT` contains biomedical literature related to each class/ effect of genetic variants.
+Two data files were used in this project. There are 3321 data points in total. `Gene` and `Variation` are categorical.  `Class` contains 9 unique values.`TEXT` contains biomedical literature related to each class/ effect of genetic variants.
 
 * training_text.zip: `ID` `TEXT`
 * training_variants.zip: `ID` `Gene` `Variation` `Class` 
@@ -78,17 +74,15 @@ Eight supervised machine learning methods were applied:
 
 [Here](https://github.com/JoKerDii/Personalized-Medicine/tree/master/eight-ml-classifiers) is an evaluation of model performance.
 
-### Neural Networks （Updating）
+### Neural Networks
 
-**CNN** [2] and **BiLSTM** [3] are available now.  
-
-RCNN, RNN+Attention, and BERT are coming (not soon...it depends on my free time...).
+**CNN** [2] and **BiLSTM** [3].  RCNN, RNN+Attention, and BERT are worth trying.
 
 Pre-trained word-embedding is chosen from: [pubmed_w2v_400D](https://github.com/RaRe-Technologies/gensim-data/issues/28)
 
 ### Evaluation Metrics
 
-* Log loss / Cross entropy loss (suggested by Kaggle competition)
+* Log loss / Cross entropy loss
 * Balanced accuracy
 * F1-score (micro-average)
 
@@ -100,17 +94,17 @@ Pre-trained word-embedding is chosen from: [pubmed_w2v_400D](https://github.com/
 * [Comparison of pre-trained word embedding models](https://github.com/JoKerDii/Personalized-Medicine/tree/master/word-embedding-and-bow)
   * The representative power of pre-trained word embedding model highly depends on the dataset itself.
 * [Evaluation of eight machine learning methods](https://github.com/JoKerDii/Personalized-Medicine/blob/master/eight-ml-classifiers/performance-of-ml-classifiers.ipynb)
-* [Evaluation of several neural network -based models](https://github.com/JoKerDii/Personalized-Medicine/tree/master/neural-nets) (updating)
+* [Evaluation of several neural network -based models](https://github.com/JoKerDii/Personalized-Medicine/tree/master/neural-nets)
 
 ## Future Work
 
-1. Upcoming other three or more NN based models.
-2. Combine / stack NN models.
-3. Build Non-static NN models. It is reported that non-static NN models are always better than static NN models.
-4. Concatenate multiple word vector representations (e.g. pubmed_w2c_400D and BioConceptVec). In addition to word vectors trained from PubMed, biological concepts are important features.
-5. Deal with imbalanced text data by sentence / word augmentation using [nlpaug](https://github.com/makcedward/nlpaug).
-6. Build a hybrid model / multi-model: one part trained on text data, the other trained on sequence data to capture genetic variants ( like what [DeepSEA](https://github.com/SUSE/DeepSea) does? )
-7. Let's think...
+1. Include different types of dataset from other sources, e.g, personal information (family disease history, age, race, etc). 
+2. Upcome other three or more NN based models.
+3. Combine / stack NN models.
+4. Build Non-static NN models. It is reported that non-static NN models are always better than static NN models.
+5. Concatenate multiple word vector representations (e.g. pubmed_w2c_400D and BioConceptVec). In addition to word vectors trained from PubMed, biological concepts are important features.
+6. Deal with imbalanced text data by sentence / word augmentation using [nlpaug](https://github.com/makcedward/nlpaug).
+7. Build a hybrid model / multi-model: one part trained on text data, the other trained on sequence data to capture genetic variants ( like what [DeepSEA](https://github.com/SUSE/DeepSea) does)
 
 ## Environment
 
@@ -120,8 +114,8 @@ pytorch 1.7.0
 
 ## Directory
 
+````
 ```
-​```
 Personalized-Medicine
 ├── eight-ml-classifiers
 │   ├── images
@@ -197,7 +191,7 @@ Personalized-Medicine
 └── README.md
 
 ​```
-```
+````
 
 
 
